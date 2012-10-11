@@ -75,6 +75,33 @@ public class Manager extends Employe {
 	}
 	
 	/**
+	 * compte le nombre de femmes sous la responsabillité d'un manager
+	 * @return
+	 */
+	public int nombreFemmes() {
+		int f = 0;
+		for (Employe e: this.employes) {
+			if (!e.isSexe()) {
+				f++;
+			}
+			if (e instanceof Manager) {
+				Manager m = (Manager) e;
+				f += m.nombreFemmes();
+			}
+		}
+		return f;
+	}
+	
+	/**
+	 * 
+	 * pourcentage de femmes sous la responsabilité d'un manager
+	 */
+	float pourcentageFemmes() {
+		float r = ((float) nombreFemmes() / (float) nombreEmployes())*100f;
+		return r;
+	}
+	
+	/**
 	 * afficher la hierarchie d'un manager sur le modele
 	 * A a pour chef B
 	 * B a pour chef C

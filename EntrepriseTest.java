@@ -33,6 +33,11 @@ public class EntrepriseTest {
 		System.out.println("---------");
 
 		dd.afficheHierarchie();
+		
+		// pourcentage de femmes
+		System.out.println("Pourcentage de femmes sous la responsabilité de DD : "+dd.pourcentageFemmes());
+		System.out.println("Pourcentage de femmes sous la responsabilité de FH : "+fh.pourcentageFemmes());
+		
 	}
 
 }
