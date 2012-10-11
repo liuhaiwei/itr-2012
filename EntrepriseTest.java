@@ -35,9 +35,14 @@ public class EntrepriseTest {
 		dd.afficheHierarchie();
 		
 		// pourcentage de femmes
-		System.out.println("Pourcentage de femmes sous la responsabilité de DD : "+dd.pourcentageFemmes());
-		System.out.println("Pourcentage de femmes sous la responsabilité de FH : "+fh.pourcentageFemmes());
-		
+		try {
+			System.out.println("Pourcentage de femmes sous la responsabilité de DD : "+dd.pourcentageFemmes());
+			System.out.println("Pourcentage de femmes sous la responsabilité de FH : "+fh.pourcentageFemmes());
+			System.out.println("Pourcentage de femmes sous la responsabilité de DB : "+db.pourcentageFemmes());
+		}
+		catch (PasDEmployeException e) {
+			System.out.println("On ne peut pas calculer le pourcentage de femmes si 0 employes");
+		}
 	}
 
 }

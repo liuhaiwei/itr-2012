@@ -96,8 +96,13 @@ public class Manager extends Employe {
 	 * 
 	 * pourcentage de femmes sous la responsabilité d'un manager
 	 */
-	float pourcentageFemmes() {
-		float r = ((float) nombreFemmes() / (float) nombreEmployes())*100f;
+	float pourcentageFemmes() throws PasDEmployeException {
+		int nf = nombreFemmes();
+		int ne = nombreEmployes();
+		if (ne == 0) {
+			throw new PasDEmployeException();
+		}
+		float r = ((float) nf / (float) ne)*100f;
 		return r;
 	}
 	
