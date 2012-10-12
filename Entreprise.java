@@ -6,7 +6,17 @@
  * @author moreau
  *
  */
-public class Entreprise {
+public class Entreprise implements Contactable {
+	/**
+	 * adresse mail 
+	 */
+	private ContactMail email;
+	
+	/**
+	 * téléphone
+	 */
+	private ContactTelephonique telephone;
+	
 	/**
 	 * nom de l'entreprise
 	 */
@@ -31,5 +41,24 @@ public class Entreprise {
 	 */
 	public Entreprise(String nom) {
 		this.nom = nom;
+	}
+
+	@Override
+	public void setContact(Contact c) {
+		if (c instanceof ContactTelephonique) {
+			this.telephone = (ContactTelephonique) c;
+		}
+		if (c instanceof ContactMail) {
+			this.email = (ContactMail) c;
+		}
+	}
+
+	@Override
+	public Contact getContact() {
+		// on privilégie l'adresse mail
+		if (this.email != null) {
+			return this.email;
+		}
+		return this.telephone;
 	}
 }

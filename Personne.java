@@ -6,7 +6,8 @@
  * @author moreau
  * une classe Personne qui va définir les informations relatives à une Personne
  */
-public class Personne {
+public class Personne implements Contactable {
+	Contact adresse;
 	
 	/** 
 	 * Le nom de la personne
@@ -128,6 +129,18 @@ public class Personne {
 		
 		System.out.println(p);
 		
+	}
+
+	@Override
+	public void setContact(Contact c) {
+		if (c instanceof ContactMail) {
+			this.adresse = c;
+		}
+	}
+
+	@Override
+	public Contact getContact() {
+		return this.adresse;
 	}
 
 }
