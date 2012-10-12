@@ -4,6 +4,15 @@ public class ContactTelephonique extends Contact {
 	
 	
 	/**
+	 * @param telephone
+	 */
+	public ContactTelephonique(String telephone) {
+		super();
+		this.telephone = telephone;
+	}
+
+
+	/**
 	 * @return the telephone
 	 */
 	public String getTelephone() {

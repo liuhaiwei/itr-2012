@@ -24,4 +24,12 @@ public class ContactMail extends Contact {
 	public String toString() {
 		return "email : "+this.email;
 	}
+
+	/**
+	 * @param email
+	 */
+	public ContactMail(String email) {
+		super();
+		this.email = email;
+	}
 }
