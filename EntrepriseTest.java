@@ -63,11 +63,15 @@ public class EntrepriseTest {
 		a.ajouter(yl);
 		a.ajouter(yc);
 		
-		System.out.println(a.chercher("Moreau"));
-		System.out.println(a.chercher("Gouvernement Français"));
-		System.out.println(a.chercher("Dagot"));
-		
-		
+		try {
+			System.out.println(a.chercher("Moreau"));
+			System.out.println(a.chercher("Gouvernement Français"));
+			System.out.println(a.chercher("Dagot"));
+			System.out.println(a.chercher("Yin"));
+		}
+		catch (NoContactInfoException e) {
+			System.out.println("Une recherche a échoué : "+e.getMessage());
+		}
 	}
 
 }

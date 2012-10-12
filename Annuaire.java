@@ -11,11 +11,14 @@ public class Annuaire {
 		this.ann.add(c);
 	}
 	
-	public Contact chercher(String nom) {
+	public Contact chercher(String nom) throws NoContactInfoException {
 		Contact c = null;
 		for (Contactable x : this.ann) {
 			if (nom.equals(x.getNom())) {
 				c = x.getContact();
+				if (c == null) {
+					throw new NoContactInfoException("Pas d'information de contact pour "+nom);
+				}
 				break;
 			}
 		}
