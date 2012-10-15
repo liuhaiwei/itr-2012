@@ -1,6 +1,10 @@
 
 public interface Contactable {
- public Contact getContactInfo();
- public void setContactInfo(Contact c);
- 
+
+
+	public void setContact(Contact c);
+	public Contact getContact();
+	
+	public String getNom();
 }
+

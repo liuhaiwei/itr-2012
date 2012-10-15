@@ -7,15 +7,24 @@
  *
  */
 public class Employe extends Personne {
+
    String branch1111;
 	/**
-	 * num�ro d'employe
+	 * num锟絩o d'employe
 	 */
-	
+
+	/**
+	 * Entreprise dans laquelle travaille l'employ锟�
+=======
+
+	/**
+	 * num巖o d'employ�
+	 */
 	private int numero;
 	
 	/**
 	 * Entreprise dans laquelle travaille l'employ�
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	Entreprise entreprise;
 	
@@ -67,7 +76,10 @@ public class Employe extends Personne {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString()+" - travaille chez "+entreprise.getNom()+
-		", num�ro "+this.numero;
+
+		", numero "+this.numero;
+
+
 	}
 
 	public static void main(String[] args) {

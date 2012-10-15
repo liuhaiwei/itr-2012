@@ -6,20 +6,27 @@
  * @author moreau
  *
  */
-public class Entreprise {
-	String branch1111;
+
+
+
+public class Entreprise implements Contactable {
+	/**
+	 * adresse mail 
+	 */
+	private ContactMail email;
+	
+	/**
+	 * téléphone
+	 */
+	private ContactTelephonique telephone;
+	
+
 	/**
 	 * nom de l'entreprise
 	 */
 	private String nom;
 
-	public String getBranch1111() {
-		return branch1111;
-	}
 
-	public void setBranch1111(String branch1111) {
-		this.branch1111 = branch1111;
-	}
 
 	/**
 	 * @return the nom
@@ -41,4 +48,25 @@ public class Entreprise {
 	public Entreprise(String nom) {
 		this.nom = nom;
 	}
+
+
+	@Override
+	public void setContact(Contact c) {
+		if (c instanceof ContactTelephonique) {
+			this.telephone = (ContactTelephonique) c;
+		}
+		if (c instanceof ContactMail) {
+			this.email = (ContactMail) c;
+		}
+	}
+
+	@Override
+	public Contact getContact() {
+		// on privilégie l'adresse mail
+		if (this.email != null) {
+			return this.email;
+		}
+		return this.telephone;
+	}
+
 }

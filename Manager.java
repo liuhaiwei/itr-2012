@@ -9,14 +9,8 @@ import java.util.LinkedList;
  * une classe Manager
  */
 public class Manager extends Employe {
-	String branch2222;
-	public String getBranch2222() {
-		return branch2222;
-	}
 
-	public void setBranch2222(String branch2222) {
-		this.branch2222 = branch2222;
-	}
+
 
 	/**
 	 * liste des personnes sous les ordres du Manager
@@ -24,6 +18,7 @@ public class Manager extends Employe {
 	private LinkedList<Employe> employes;
 	
 	/**
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * sup宸杋eur hi宸朼rchique
 	 * 
@@ -33,6 +28,11 @@ public class Manager extends Employe {
 	 * 
 	 * pour le patron de l'entreprise, le sup锟絩ieur vaudra null
 >>>>>>> testbranch
+=======
+	 * sup�rieur hi�rarchique
+	 * 
+	 * pour le patron de l'entreprise, le sup�rieur vaudra null
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	private Manager manager;
 	
@@ -59,16 +59,18 @@ public class Manager extends Employe {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * ajoute un employ锟斤拷la liste des gens sous les ordres du 
 	 * manager
 	 * @param nouveau l'employ锟斤拷ajouter
 	 */
 
+
 	public void ajouteEmploye(Employe nouveau) {
-		// ajout 锟�la liste des nouveaux
+		// ajout � la liste des nouveaux
 		this.employes.add(nouveau);
 		
-		// on v锟絩ifie si nouveau est lui-m锟絤e un Manager
+		// on v�rifie si nouveau est lui-m�me un Manager
 
 		if (nouveau instanceof Manager) {
 			// sous-classement
@@ -79,10 +81,14 @@ public class Manager extends Employe {
 	
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * donne le nombre d'employ宸�sous les ordres d'un manager
 =======
 	 * donne le nombre d'employ锟絪 sous les ordres d'un manager
 >>>>>>> testbranch
+=======
+	 * donne le nombre d'employ�s sous les ordres d'un manager
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	public int nombreEmployes() {
 		int s = this.employes.size();
@@ -95,6 +101,7 @@ public class Manager extends Employe {
 		return s;
 	}
 	
+
 	public int nombreFemme(){
 		int n=0;
 		for (Employe e: this.employes){
@@ -108,6 +115,40 @@ public class Manager extends Employe {
 			
 		return n;
 	}
+
+	/**
+	 * compte le nombre de femmes sous la responsabillit� d'un manager
+	 * @return
+	 */
+	public int nombreFemmes() {
+		int f = 0;
+		for (Employe e: this.employes) {
+			if (!e.isSexe()) {
+				f++;
+			}
+			if (e instanceof Manager) {
+				Manager m = (Manager) e;
+				f += m.nombreFemmes();
+			}
+		}
+		return f;
+	}
+	
+	/**
+	 * 
+	 * pourcentage de femmes sous la responsabilit� d'un manager
+	 */
+	float pourcentageFemmes() throws PasDEmployeException {
+		int nf = nombreFemmes();
+		int ne = nombreEmployes();
+		if (ne == 0) {
+			throw new PasDEmployeException();
+		}
+		float r = ((float) nf / (float) ne)*100f;
+		return r;
+	}
+	
+
 	/**
 	 * afficher la hierarchie d'un manager sur le modele
 	 * A a pour chef B
@@ -115,9 +156,11 @@ public class Manager extends Employe {
 	 * C a pour chef D
 	 * D est le patron
 	 */
+
 	public double pourcentageFemme(){
 		return (double)this.nombreFemme()/this.nombreEmployes();
 	}
+
 	void afficheHierarchie() {
 		if (this.manager == null) {
 			System.out.println(this.getNomComplet()+" est le patron");

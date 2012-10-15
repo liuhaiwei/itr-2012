@@ -4,17 +4,24 @@
 
 /**
  * @author moreau
+<<<<<<< HEAD
  * une classe Personne qui va d宸塱nir les informations relatives 锟絬ne Personne
  */
 public class Personne implements Contactable {
 	Contact adresse;
-	/** 
+
+
+/* 
 	 * Le nom de la personne
 	 */
 	private String nom;
 	
 	/**
+<<<<<<< HEAD
 	 *  Le pr宸抩m de la personne
+=======
+	 *  Le pr�nom de la personne
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	private String prenom;
 	
@@ -24,12 +31,20 @@ public class Personne implements Contactable {
 	private boolean sexe;
 	
 	/**
+<<<<<<< HEAD
 	 *  L'ann宸�de naissance de la personne
+=======
+	 *  L'ann�e de naissance de la personne
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	private int anneeNaissance;
 	
 	/** 
+<<<<<<< HEAD
 	 * retourne le pr宸抩m suivi du nom
+=======
+	 * retourne le pr�nom suivi du nom
+>>>>>>> 749e6d49c7bdbfb78597176b3c65dfa0d613c968
 	 */
 	public String getNomComplet() {
 		return this.prenom+" "+this.nom;
@@ -131,18 +146,17 @@ public class Personne implements Contactable {
 	}
 
 	@Override
-	public Contact getContactInfo() {
-		// TODO Auto-generated method stub
-		return adresse;
+
+	public void setContact(Contact c) {
+		if (c instanceof ContactMail) {
+			this.adresse = c;
+		}
 	}
 
 	@Override
-	public void setContactInfo(Contact c) {
-		if (c instanceof ContactMail){
-			
-		}
-		// TODO Auto-generated method stub
-		this.adresse=c;
+	public Contact getContact() {
+		return this.adresse;
+
 	}
 
 }
