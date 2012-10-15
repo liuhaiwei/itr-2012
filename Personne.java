@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * Ceci est le fichier de ma classe Personne
  */
@@ -6,7 +8,12 @@
  * @author moreau
  * une classe Personne qui va définir les informations relatives à une Personne
  */
-public class Personne implements Contactable {
+public class Personne implements Contactable,Serializable {
+	/**
+	 * numéro de série de la classe
+	 */
+	private static final long serialVersionUID = 433086348;
+
 	Contact adresse;
 	
 	/** 

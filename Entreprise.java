@@ -1,12 +1,18 @@
 /**
  * 
  */
+import java.io.*;
 
 /**
  * @author moreau
  *
  */
-public class Entreprise implements Contactable {
+public class Entreprise implements Contactable,Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3433057254936104561L;
+
 	/**
 	 * adresse mail 
 	 */
