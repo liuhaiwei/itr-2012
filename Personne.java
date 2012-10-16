@@ -9,7 +9,15 @@ import java.io.Serializable;
 <<<<<<< HEAD
  * une classe Personne qui va d宸塱nir les informations relatives 锟絬ne Personne
  */
-public class Personne implements Contactable, Serializable{
+
+
+public class Personne implements Contactable,Serializable {
+	/**
+	 * num�ro de s�rie de la classe
+	 */
+	private static final long serialVersionUID = 433086348;
+
+
 	Contact adresse;
 
 
