@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * Ceci est le fichier de ma classe Personne
  */
@@ -7,7 +9,7 @@
 <<<<<<< HEAD
  * une classe Personne qui va d宸塱nir les informations relatives 锟絬ne Personne
  */
-public class Personne implements Contactable {
+public class Personne implements Contactable, Serializable{
 	Contact adresse;
 
 
